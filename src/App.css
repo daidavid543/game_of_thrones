@@ -1,0 +1,47 @@
+@import './assets/styles/colors.css';
+
+body {
+    font-family: 'Bebeboo', sans-serif;
+}
+
+.main-app {
+    max-width: 100%;
+}
+
+.flex-root {
+    min-height: 100%;
+}
+
+.logo-text {
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+}
+
+#kt_login_signin_form_singup_button {
+    margin-left: 10px;
+}
+
+.modal-menu-show {
+    display: flex;
+    z-index: 105;
+    position: absolute;
+    inset: auto auto 0px 0px;
+    margin: 0px;
+    transform: translate(25px, -79.2188px);
+}
+
+.height_100 {
+    height: 100%;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 7px solid var(--color-white);
+    position: absolute;
+    bottom: -5px;
+    left: 10px;
+}
