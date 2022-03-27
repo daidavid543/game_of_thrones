@@ -1,10 +1,18 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {useHistory, useLocation, useParams} from "react-router-dom";
 
-export default function Header(props: any) {
+export default function Header(props: {}) {
+    const history = useHistory();
+    let location = useLocation();
+    const collections: Array<string> = ['books', 'characters', 'houses'];
+
     const onLogout = () => {
         localStorage.clear();
         window.location.reload();
+    }
+
+    const onList = (collectionStr: string) => {
+        history.push(`/collection/${collectionStr}`)
     }
 
     return (
@@ -38,6 +46,15 @@ export default function Header(props: any) {
 
 
                 <div className="d-flex align-items-center">
+                    {
+                        collections.map((value, index) => {
+                            return (
+                                <button style={{textTransform: 'capitalize'}} onClick={() => onList(value)}
+                                        key={index.toString()}
+                                        className={"btn btn-sm ms-1 ms-lg-6 " + (location.pathname.indexOf(value) > 0 ? 'btn-primary' : '')}>{value.toString()}</button>
+                            )
+                        })
+                    }
 
                     <button onClick={event => onLogout()}
                             className="btn btn-icon btn-sm btn-active-bg-accent ms-1 ms-lg-6">

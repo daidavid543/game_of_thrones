@@ -3,12 +3,12 @@ import {useDispatch} from "react-redux";
 import {actionAuthChange} from "../redux/actions/Auth";
 import {ErrorMessage} from "../services/Message";
 import {Formik, Form, Field} from 'formik';
+import {User} from "../types/User";
 
 export default function Auth(props: any) {
     const dispatch = useDispatch();
-    const [mode, setMode] = useState<string>('SIGN_IN');
 
-    const onLogin = async (values: { username: string, password: string }) => {
+    const onLogin = async (values: User) => {
         if (values.username === 'admin' && values.password === 'admin') {
             onAuthed({
                 ...values,
@@ -18,7 +18,7 @@ export default function Auth(props: any) {
         }
     }
 
-    const onAuthed = (user: any) => {
+    const onAuthed = (user: User) => {
         dispatch(actionAuthChange(user));
     }
 
@@ -54,12 +54,7 @@ export default function Auth(props: any) {
                         className="login-content flex-lg-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden py-10 py-lg-20 px-10 p-lg-7 mx-auto mw-450px w-100">
 
                         <div className="d-flex flex-column-fluid flex-center py-10">
-                            {
-                                mode === 'SIGN_IN' ? (
-                                    <SignIn onSubmit={onLogin}/>
-                                ) : null
-                            }
-
+                            <SignIn onSubmit={onLogin}/>
                         </div>
                         <div
                             className="d-flex justify-content-lg-start justify-content-center align-items-center py-2 py-lg-7 py-lg-0 fs-5 fw-bolder">

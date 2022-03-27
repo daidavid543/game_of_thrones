@@ -45,3 +45,12 @@ body {
     bottom: -5px;
     left: 10px;
 }
+
+.table td:first-child {
+    text-transform: capitalize;
+}
+
+table a {
+    color: #2196f3 !important;
+    text-decoration: underline !important;
+}

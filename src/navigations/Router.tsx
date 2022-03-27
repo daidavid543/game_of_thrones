@@ -22,7 +22,7 @@ const AppWrapper = (props: any) => {
     return (
         <div className="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
 
-            <Header headerConfig={headerConfig}/>
+            <Header/>
             <div className="d-flex flex-column flex-column-fluid">
                 <div className="content fs-6 d-flex flex-column-fluid" id="kt_content">
                     <div className="container-xxl" style={{maxWidth: '100%'}}>
@@ -34,7 +34,7 @@ const AppWrapper = (props: any) => {
 
             <div className="footer py-4 d-flex flex-lg-column" id="kt_footer">
 
-                <div className="container-xxl d-flex flex-column flex-md-row flex-stack">
+                <div className="container-xxl d-flex flex-column flex-stack">
 
                     <div className="text-dark order-2 order-md-1">
                         <span className="text-muted fw-bold me-2">2021©</span>
